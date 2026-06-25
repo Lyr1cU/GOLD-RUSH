@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Референсный проект «Зерно» — не публикуем в репозиторий GOLD RUSH
+Zerno/

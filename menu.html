@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню — GOLD RUSH</title>
+  <meta name="description" content="Повне меню GOLD RUSH: бургери, картопля, напої та десерти.">
+  <link rel="icon" href="img/assets/logo.png" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body data-page="menu">
+  <header class="header">
+    <div class="header__inner container">
+      <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-aria="navOpenMenu" aria-label="Відкрити меню">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <a class="logo" href="index.html" aria-label="GOLD RUSH — на головну">
+        <img class="logo__icon" src="img/assets/logo.png" width="64" height="64" alt="">
+        <span class="logo__text"><span class="logo__name" data-i18n="logoName">GOLD RUSH</span></span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-i18n="navHome">Головна</a></li>
+          <li><a class="nav__link is-active" href="menu.html" data-i18n="navMenu">Меню</a></li>
+          <li><a class="nav__link" href="promos.html" data-i18n="navPromos">Акції</a></li>
+          <li><a class="nav__link" href="about.html" data-i18n="navAbout">Про нас</a></li>
+          <li><a class="nav__link" href="contacts.html" data-i18n="navContact">Контакти</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-switch" role="group" aria-label="Мова сайту">
+          <button class="lang-switch__btn is-active" type="button" data-lang="uk" aria-pressed="true">UA</button>
+          <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-switch__btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
+        </div>
+        <a class="btn btn--primary header__cta" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title" data-i18n="pageMenuTitle">Повне меню</h1>
+        <p class="page-hero__subtitle" id="menu-subtitle"><!-- build:menu-subtitle -->
+Бургери, картопля, напої та десерти — готуємо швидко і ситно
+<!-- /build:menu-subtitle --></p>
+      </div>
+    </div>
+
+    <section class="menu section section--white menu-page" aria-labelledby="menu-page-heading">
+      <div class="container menu__inner">
+        <h2 class="visually-hidden" id="menu-page-heading">Каталог меню</h2>
+        <h2 class="visually-hidden" id="menu-title"></h2>
+
+        <div class="menu-tabs" id="menu-tabs" role="tablist" aria-label="Категорії меню">
+<!-- build:menu-tabs -->
+<button class="menu-tabs__btn is-active" type="button" role="tab" id="menu-tab-burgers" data-tab="burgers" aria-controls="menu-panel" aria-selected="true">Бургери</button>
+<button class="menu-tabs__btn" type="button" role="tab" id="menu-tab-sides" data-tab="sides" aria-controls="menu-panel" aria-selected="false">Картопля та гарніри</button>
+<button class="menu-tabs__btn" type="button" role="tab" id="menu-tab-drinks" data-tab="drinks" aria-controls="menu-panel" aria-selected="false">Напої</button>
+<button class="menu-tabs__btn" type="button" role="tab" id="menu-tab-desserts" data-tab="desserts" aria-controls="menu-panel" aria-selected="false">Десерти</button>
+<!-- /build:menu-tabs -->
+        </div>
+
+        <div class="menu-grid" id="menu-panel" role="tabpanel" data-prebuilt="true" aria-labelledby="menu-tab-burgers">
+<!-- build:menu-grid -->
+<article class="menu-card" data-category="burgers" data-build-index="0">
+  <div class="menu-card__media">
+    <img src="img/menu/burgers/ClassicBurger.jpg" alt="Класик бургер" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Класик бургер</h3>
+      <p class="menu-card__desc">Яловичина, салат, огірок, соус</p>
+    </div>
+    <span class="menu-card__price">89 ₴</span>
+  </div>
+</article>
+<article class="menu-card" data-category="burgers" data-build-index="1">
+  <div class="menu-card__media">
+    <img src="img/menu/burgers/Double%20Cheese.jpg" alt="Подвійний чіз" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Подвійний чіз</h3>
+      <p class="menu-card__desc">Дві котлети, подвійний сир, карамелізована цибуля</p>
+    </div>
+    <span class="menu-card__price">129 ₴</span>
+  </div>
+</article>
+<article class="menu-card" data-category="burgers" data-build-index="2">
+  <div class="menu-card__media">
+    <img src="img/menu/burgers/CrispyChicken.jpg" alt="Кріспі чікен" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Кріспі чікен</h3>
+      <p class="menu-card__desc">Хрустка курка, айсберг, соус ранч</p>
+    </div>
+    <span class="menu-card__price">109 ₴</span>
+  </div>
+</article>
+<article class="menu-card" data-category="burgers" data-build-index="3">
+  <div class="menu-card__media">
+    <img src="img/menu/burgers/BaconBurger.jpg" alt="Бекон бургер" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Бекон бургер</h3>
+      <p class="menu-card__desc">Яловичина, хрусткий бекон, сир чеддер</p>
+    </div>
+    <span class="menu-card__price">119 ₴</span>
+  </div>
+</article>
+<article class="menu-card" data-category="burgers" data-build-index="4">
+  <div class="menu-card__media">
+    <img src="img/menu/burgers/GrillCheese.jpg" alt="Гриль чіз" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Гриль чіз</h3>
+      <p class="menu-card__desc">Соковита котлета на грилі, сир моцарела</p>
+    </div>
+    <span class="menu-card__price">115 ₴</span>
+  </div>
+</article>
+<article class="menu-card" data-category="burgers" data-build-index="5">
+  <div class="menu-card__media">
+    <img src="img/menu/burgers/VeggieBurger.jpg" alt="Веггі бургер" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Веггі бургер</h3>
+      <p class="menu-card__desc">Овочева котлета, томати, авокадо-соус</p>
+    </div>
+    <span class="menu-card__price">99 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="sides" data-build-index="6" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/fries-dishes/SmallFries.jpg" alt="Картопля мала" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Картопля мала</h3>
+      <p class="menu-card__desc">Золотиста картопля фрі</p>
+    </div>
+    <span class="menu-card__price">35 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="sides" data-build-index="7" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/fries-dishes/LargeFries.jpg" alt="Картопля велика" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Картопля велика</h3>
+      <p class="menu-card__desc">Порція для ділитися або не ділитися</p>
+    </div>
+    <span class="menu-card__price">49 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="sides" data-build-index="8" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/fries-dishes/Nuggets.png" alt="Нагетси 6 шт" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Нагетси 6 шт</h3>
+      <p class="menu-card__desc">Курячі нагетси з соусом на вибір</p>
+    </div>
+    <span class="menu-card__price">69 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="sides" data-build-index="9" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/fries-dishes/OnionRings.png" alt="Кільця цибулі" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Кільця цибулі</h3>
+      <p class="menu-card__desc">Хрусткі кільця в паніровці</p>
+    </div>
+    <span class="menu-card__price">55 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="sides" data-build-index="10" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/fries-dishes/CaesarSalad.png" alt="Салат Цезар" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Салат Цезар</h3>
+      <p class="menu-card__desc">Курка, пармезан, соус цезар</p>
+    </div>
+    <span class="menu-card__price">89 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="drinks" data-build-index="11" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/drinks/Cola05.png" alt="Кола 0.5" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Кола 0.5</h3>
+      <p class="menu-card__desc">Класична газована</p>
+    </div>
+    <span class="menu-card__price">35 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="drinks" data-build-index="12" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/drinks/Cola03.png" alt="Кола 0.3" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Кола 0.3</h3>
+      <p class="menu-card__desc">Менша порція</p>
+    </div>
+    <span class="menu-card__price">25 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="drinks" data-build-index="13" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/drinks/OrangeJuice.png" alt="Апельсиновий сік" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Апельсиновий сік</h3>
+      <p class="menu-card__desc">0.3 л, без газу</p>
+    </div>
+    <span class="menu-card__price">39 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="drinks" data-build-index="14" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/drinks/LemonIcedTea.png" alt="Айс-ті лимон" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Айс-ті лимон</h3>
+      <p class="menu-card__desc">Освіжаючий холодний чай</p>
+    </div>
+    <span class="menu-card__price">35 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="drinks" data-build-index="15" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/drinks/Americano.png" alt="Кава американо" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Кава американо</h3>
+      <p class="menu-card__desc">Еспресо з гарячою водою</p>
+    </div>
+    <span class="menu-card__price">45 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="drinks" data-build-index="16" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/drinks/VanillaMilkshake.png" alt="Мілкшейк ваніль" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Мілкшейк ваніль</h3>
+      <p class="menu-card__desc">Густий молочний коктейль</p>
+    </div>
+    <span class="menu-card__price">59 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="desserts" data-build-index="17" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/desserts/ChocolateMuffin.png" alt="Маффін шоколад" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Маффін шоколад</h3>
+      <p class="menu-card__desc">М'який шоколадний маффін</p>
+    </div>
+    <span class="menu-card__price">45 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="desserts" data-build-index="18" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/desserts/Cheesecake.png" alt="Чізкейк" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Чізкейк</h3>
+      <p class="menu-card__desc">Ніжний вершковий десерт</p>
+    </div>
+    <span class="menu-card__price">69 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="desserts" data-build-index="19" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/desserts/VanillaIceCream.png" alt="Морозиво ваніль" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Морозиво ваніль</h3>
+      <p class="menu-card__desc">2 кульки в стаканчику</p>
+    </div>
+    <span class="menu-card__price">49 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="desserts" data-build-index="20" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/desserts/ApplePie.png" alt="Яблучний пиріг" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Яблучний пиріг</h3>
+      <p class="menu-card__desc">Теплий шматочок з корицею</p>
+    </div>
+    <span class="menu-card__price">55 ₴</span>
+  </div>
+</article>
+<article class="menu-card is-hidden" data-category="desserts" data-build-index="21" hidden>
+  <div class="menu-card__media">
+    <img src="img/menu/desserts/Brownie.png" alt="Брауні" width="280" height="280" loading="lazy" decoding="async">
+  </div>
+  <div class="menu-card__body">
+    <div class="menu-card__info">
+      <h3 class="menu-card__name">Брауні</h3>
+      <p class="menu-card__desc">Шоколадний брауні з горіхами</p>
+    </div>
+    <span class="menu-card__price">52 ₴</span>
+  </div>
+</article>
+<!-- /build:menu-grid -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo" data-i18n="logoName">GOLD RUSH</span>
+        <p class="footer__tagline" data-i18n="footerTagline">Швидко. Ситно. Поруч.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Футер навігація">
+        <a href="index.html" data-i18n="navHome">Головна</a>
+        <a href="menu.html" data-i18n="navMenu">Меню</a>
+        <a href="promos.html" data-i18n="navPromos">Акції</a>
+        <a href="about.html" data-i18n="navAbout">Про нас</a>
+        <a href="contacts.html" data-i18n="navContact">Контакти</a>
+      </nav>
+      <div class="footer__actions">
+        <div class="socials socials--footer" id="footer-socials"></div>
+        <a class="footer__top" href="index.html" data-i18n="footerTop">Нагору ↑</a>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p class="footer__copy" data-i18n="footerCopyright">© 2026 GOLD RUSH. Демо розширеного пакету.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

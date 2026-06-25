@@ -1,0 +1,37 @@
+{
+  "title_uk": "Відгуки",
+  "title_en": "Reviews",
+  "title_ru": "Отзывы",
+  "subtitle_uk": "Що кажуть наші гості",
+  "subtitle_en": "What our guests say",
+  "subtitle_ru": "Что говорят наши гости",
+  "items": [
+    {
+      "author_uk": "Олег К.",
+      "author_en": "Oleh K.",
+      "author_ru": "Олег К.",
+      "text_uk": "Швидка доставка — замовлення приїхало гарячим і вчасно. Рекомендую!",
+      "text_en": "Fast delivery — the order arrived hot and on time. Highly recommend!",
+      "text_ru": "Быстрая доставка — заказ приехал горячим и вовремя. Рекомендую!",
+      "stars": 5
+    },
+    {
+      "author_uk": "Марія С.",
+      "author_en": "Mariia S.",
+      "author_ru": "Мария С.",
+      "text_uk": "Смачні комбо за адекватну ціну. Подвійний чіз — мій фаворит.",
+      "text_en": "Tasty combos at a fair price. Double cheese is my favorite.",
+      "text_ru": "Вкусные комбо по адекватной цене. Двойной чиз — мой фаворит.",
+      "stars": 5
+    },
+    {
+      "author_uk": "Денис В.",
+      "author_en": "Denys V.",
+      "author_ru": "Денис В.",
+      "text_uk": "Зручно замовляти з телефону — інтерфейс простий, все зрозуміло.",
+      "text_en": "Easy to order from your phone — simple interface, everything is clear.",
+      "text_ru": "Удобно заказывать с телефона — интерфейс простой, всё понятно.",
+      "stars": 5
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "title_uk": "Галерея",
+  "title_en": "Gallery",
+  "title_ru": "Галерея",
+  "subtitle_uk": "Атмосфера GOLD RUSH — їжа, інтер'єр, настрій",
+  "subtitle_en": "GOLD RUSH vibes — food, interior, mood",
+  "subtitle_ru": "Атмосфера GOLD RUSH — еда, интерьер, настроение",
+  "items": [
+    {
+      "image": "img/gallery/gallery-03-open-kitchen.png",
+      "alt_uk": "Відкрита кухня GOLD RUSH — шефи готують на очах",
+      "alt_en": "GOLD RUSH open kitchen — chefs cooking in sight",
+      "alt_ru": "Открытая кухня GOLD RUSH — повара готовят на глазах",
+      "layout": "tall"
+    },
+    {
+      "image": "img/gallery/gallery-01-burger.jpg",
+      "alt_uk": "Подвійний чізбургер — пар і соковите м'ясо",
+      "alt_en": "Double cheeseburger with steam rising",
+      "alt_ru": "Двойной чизбургер — пар и сочное мясо",
+      "layout": "wide"
+    },
+    {
+      "image": "img/gallery/gallery-02-fries.jpg",
+      "alt_uk": "Гаряча картопля фрі в кошику",
+      "alt_en": "Hot french fries in a basket",
+      "alt_ru": "Горячий картофель фри в корзинке",
+      "layout": "normal"
+    },
+    {
+      "image": "img/gallery/gallery-04-combo.jpg",
+      "alt_uk": "Комбо: бургер, картопля та кола",
+      "alt_en": "Combo: burger, fries and cola",
+      "alt_ru": "Комбо: бургер, картофель и кола",
+      "layout": "normal"
+    },
+    {
+      "image": "img/gallery/gallery-05-dining.jpg",
+      "alt_uk": "Зал ресторану — затишна атмосфера",
+      "alt_en": "Restaurant dining hall — cozy atmosphere",
+      "alt_ru": "Зал ресторана — уютная атмосфера",
+      "layout": "wide"
+    },
+    {
+      "image": "img/gallery/gallery-06-milkshake.jpg",
+      "alt_uk": "Мілкшейк з вершками та десертом",
+      "alt_en": "Milkshake with whipped cream and dessert",
+      "alt_ru": "Милкшейк со сливками и десертом",
+      "layout": "normal"
+    }
+  ]
+}

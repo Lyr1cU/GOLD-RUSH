@@ -1,0 +1,204 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: Lyr1cU/Gold-Rush
+  branch: main
+  base_url: https://YOUR-OAUTH-PROXY.example.com
+  auth_endpoint: auth
+
+site_url: https://lyr1cu.github.io/Gold-Rush/
+display_url: https://lyr1cu.github.io/Gold-Rush/
+logo_url: https://lyr1cu.github.io/Gold-Rush/img/assets/logo.png
+
+media_folder: img/uploads
+public_folder: img/uploads
+
+collections:
+  - name: menu
+    label: Меню
+    files:
+      - name: menu
+        label: Меню
+        file: content/menu.json
+        fields:
+          - { label: Заголовок (UA), name: title_uk, widget: string }
+          - { label: Заголовок (EN), name: title_en, widget: string }
+          - { label: Заголовок (RU), name: title_ru, widget: string }
+          - { label: Підзаголовок (UA), name: subtitle_uk, widget: string }
+          - { label: Підзаголовок (EN), name: subtitle_en, widget: string }
+          - { label: Підзаголовок (RU), name: subtitle_ru, widget: string }
+          - label: Категорії
+            name: categories
+            widget: list
+            summary: "{{fields.label_uk}}"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Назва (UA), name: label_uk, widget: string }
+              - { label: Назва (EN), name: label_en, widget: string }
+              - { label: Назва (RU), name: label_ru, widget: string }
+          - label: Позиції
+            name: items
+            widget: list
+            summary: "{{fields.name_uk}}"
+            fields:
+              - { label: Категорія, name: category, widget: string }
+              - { label: Назва (UA), name: name_uk, widget: string }
+              - { label: Назва (EN), name: name_en, widget: string }
+              - { label: Назва (RU), name: name_ru, widget: string }
+              - { label: Опис (UA), name: desc_uk, widget: text }
+              - { label: Опис (EN), name: desc_en, widget: text }
+              - { label: Опис (RU), name: desc_ru, widget: text }
+              - { label: Ціна (UA), name: price_uk, widget: string }
+              - { label: Ціна (EN), name: price_en, widget: string }
+              - { label: Ціна (RU), name: price_ru, widget: string }
+              - { label: Фото, name: image, widget: image }
+
+  - name: promos
+    label: Акції та комбо
+    files:
+      - name: promos
+        label: Акції
+        file: content/promos.json
+        fields:
+          - { label: Заголовок (UA), name: title_uk, widget: string }
+          - { label: Заголовок (EN), name: title_en, widget: string }
+          - { label: Заголовок (RU), name: title_ru, widget: string }
+          - { label: Підзаголовок (UA), name: subtitle_uk, widget: string }
+          - { label: Підзаголовок (EN), name: subtitle_en, widget: string }
+          - { label: Підзаголовок (RU), name: subtitle_ru, widget: string }
+          - label: Акції
+            name: items
+            widget: list
+            summary: "{{fields.name_uk}}"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Назва (UA), name: name_uk, widget: string }
+              - { label: Назва (EN), name: name_en, widget: string }
+              - { label: Назва (RU), name: name_ru, widget: string }
+              - { label: Опис (UA), name: desc_uk, widget: text }
+              - { label: Опис (EN), name: desc_en, widget: text }
+              - { label: Опис (RU), name: desc_ru, widget: text }
+              - { label: Ціна (UA), name: price_uk, widget: string }
+              - { label: Ціна (EN), name: price_en, widget: string }
+              - { label: Ціна (RU), name: price_ru, widget: string }
+              - { label: Умови (UA), name: terms_uk, widget: string }
+              - { label: Умови (EN), name: terms_en, widget: string }
+              - { label: Умови (RU), name: terms_ru, widget: string }
+              - { label: Фото, name: image, widget: image }
+
+  - name: gallery
+    label: Галерея
+    files:
+      - name: gallery
+        label: Галерея
+        file: content/gallery.json
+        fields:
+          - { label: Заголовок (UA), name: title_uk, widget: string }
+          - { label: Заголовок (EN), name: title_en, widget: string }
+          - { label: Заголовок (RU), name: title_ru, widget: string }
+          - { label: Підзаголовок (UA), name: subtitle_uk, widget: string }
+          - { label: Підзаголовок (EN), name: subtitle_en, widget: string }
+          - { label: Підзаголовок (RU), name: subtitle_ru, widget: string }
+          - label: Фото
+            name: items
+            widget: list
+            summary: "{{fields.alt_uk}}"
+            fields:
+              - { label: Зображення, name: image, widget: image }
+              - { label: Alt (UA), name: alt_uk, widget: string }
+              - { label: Alt (EN), name: alt_en, widget: string }
+              - { label: Alt (RU), name: alt_ru, widget: string }
+              - label: Розмір
+                name: layout
+                widget: select
+                default: normal
+                options:
+                  - { label: Звичайне, value: normal }
+                  - { label: Високе, value: tall }
+                  - { label: Широке, value: wide }
+
+  - name: reviews
+    label: Відгуки
+    files:
+      - name: reviews
+        label: Відгуки
+        file: content/reviews.json
+        fields:
+          - { label: Заголовок (UA), name: title_uk, widget: string }
+          - { label: Заголовок (EN), name: title_en, widget: string }
+          - { label: Заголовок (RU), name: title_ru, widget: string }
+          - { label: Підзаголовок (UA), name: subtitle_uk, widget: string }
+          - { label: Підзаголовок (EN), name: subtitle_en, widget: string }
+          - { label: Підзаголовок (RU), name: subtitle_ru, widget: string }
+          - label: Відгуки
+            name: items
+            widget: list
+            summary: "{{fields.author_uk}}"
+            fields:
+              - { label: Автор (UA), name: author_uk, widget: string }
+              - { label: Автор (EN), name: author_en, widget: string }
+              - { label: Автор (RU), name: author_ru, widget: string }
+              - { label: Текст (UA), name: text_uk, widget: text }
+              - { label: Текст (EN), name: text_en, widget: text }
+              - { label: Текст (RU), name: text_ru, widget: text }
+              - { label: Зірки, name: stars, widget: number, min: 1, max: 5, default: 5 }
+
+  - name: contacts
+    label: Контакти
+    files:
+      - name: contacts
+        label: Контакти
+        file: content/contacts.json
+        fields:
+          - { label: Заголовок (UA), name: title_uk, widget: string }
+          - { label: Заголовок (EN), name: title_en, widget: string }
+          - { label: Заголовок (RU), name: title_ru, widget: string }
+          - { label: Підпис «Адреса» (UA), name: addressLabel_uk, widget: string }
+          - { label: Підпис «Адреса» (EN), name: addressLabel_en, widget: string }
+          - { label: Підпис «Адреса» (RU), name: addressLabel_ru, widget: string }
+          - { label: Підпис «Графік» (UA), name: hoursLabel_uk, widget: string }
+          - { label: Підпис «Графік» (EN), name: hoursLabel_en, widget: string }
+          - { label: Підпис «Графік» (RU), name: hoursLabel_ru, widget: string }
+          - { label: Підпис «Телефон» (UA), name: phoneLabel_uk, widget: string }
+          - { label: Підпис «Телефон» (EN), name: phoneLabel_en, widget: string }
+          - { label: Підпис «Телефон» (RU), name: phoneLabel_ru, widget: string }
+          - { label: Телефон (відображення UA), name: phoneDisplay_uk, widget: string }
+          - { label: Телефон (відображення EN), name: phoneDisplay_en, widget: string }
+          - { label: Телефон (відображення RU), name: phoneDisplay_ru, widget: string }
+          - { label: Телефон (tel:), name: phone, widget: string }
+          - { label: Підпис карти (UA), name: mapLabel_uk, widget: string }
+          - { label: Підпис карти (EN), name: mapLabel_en, widget: string }
+          - { label: Підпис карти (RU), name: mapLabel_ru, widget: string }
+          - label: Локації
+            name: locations
+            widget: list
+            summary: "{{fields.name_uk}}"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Назва (UA), name: name_uk, widget: string }
+              - { label: Назва (EN), name: name_en, widget: string }
+              - { label: Назва (RU), name: name_ru, widget: string }
+              - { label: Адреса (UA), name: address_uk, widget: string }
+              - { label: Адреса (EN), name: address_en, widget: string }
+              - { label: Адреса (RU), name: address_ru, widget: string }
+              - { label: Графік (UA), name: hours_uk, widget: string }
+              - { label: Графік (EN), name: hours_en, widget: string }
+              - { label: Графік (RU), name: hours_ru, widget: string }
+              - { label: Широта, name: mapLat, widget: number, value_type: float }
+              - { label: Довгота, name: mapLng, widget: number, value_type: float }
+              - { label: Zoom, name: mapZoom, widget: number, min: 10, max: 20, default: 16 }
+          - label: Соцмережі
+            name: socials
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - label: Мережа
+                name: id
+                widget: select
+                options:
+                  - { label: Telegram, value: telegram }
+                  - { label: Instagram, value: instagram }
+                  - { label: Facebook, value: facebook }
+              - { label: Посилання, name: url, widget: string }
+              - { label: Назва, name: label, widget: string }

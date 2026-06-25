@@ -1,0 +1,245 @@
+/* ==========================================================================
+   site-template — mobile (≤767px)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 68px;
+    --section-pad: 3.25rem;
+  }
+
+  .container {
+    padding-inline: 16px;
+  }
+
+  /* Header
+     ---------------------------------------------------------------------- */
+
+  .header__inner {
+    gap: 0.75rem;
+  }
+
+  .logo {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .logo__divider,
+  .logo__name-en {
+    display: none;
+  }
+
+  .logo__icon {
+    width: 52px;
+    height: 52px;
+    margin-block: -4px;
+  }
+
+  .logo__text {
+    font-size: 1.1rem;
+  }
+
+  .logo__name-en {
+    font-size: 0.9rem;
+  }
+
+  .header__actions {
+    gap: 0.5rem;
+  }
+
+  .lang-switch__btn {
+    min-width: 36px;
+    min-height: 30px;
+    font-size: 0.75rem;
+  }
+
+  /* Hero
+     ---------------------------------------------------------------------- */
+
+  .hero {
+    min-height: calc(100svh - var(--header-height));
+  }
+
+  .hero__content {
+    padding-block: 2.5rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 9vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero__subtitle {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  /* Sections
+     ---------------------------------------------------------------------- */
+
+  .section-subtitle {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  body[data-page="menu"] .page-hero,
+  body[data-page="promos"] .page-hero,
+  body[data-page="contacts"] .page-hero,
+  body[data-page="about"] .page-hero {
+    padding-block: 1.5rem 0.75rem;
+  }
+
+  body[data-page="menu"] .section,
+  body[data-page="promos"] .section,
+  body[data-page="contacts"] .section,
+  body[data-page="about"] .section {
+    padding-top: 1rem;
+  }
+
+  /* About
+     ---------------------------------------------------------------------- */
+
+  .about__text {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  .features {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .feature-card,
+  .menu-card,
+  .gallery-item,
+  .review-card {
+    min-width: 0;
+  }
+
+  .feature-card {
+    padding: 1.35rem 1.25rem;
+  }
+
+  /* Menu
+     ---------------------------------------------------------------------- */
+
+  .menu-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-tabs__btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 0.75rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  /* Gallery
+     ---------------------------------------------------------------------- */
+
+  .gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    gap: 0.75rem;
+  }
+
+  .gallery-item,
+  .gallery-item--tall,
+  .gallery-item--wide {
+    grid-row: auto;
+    grid-column: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Reviews
+     ---------------------------------------------------------------------- */
+
+  .reviews-slider {
+    gap: 0.75rem;
+  }
+
+  .reviews-slider__arrow {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .review-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Contact
+     ---------------------------------------------------------------------- */
+
+  .contact__form-title,
+  .contact__info .section-title {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-list {
+    margin: 1.5rem 0;
+  }
+
+  .contact-map {
+    height: 260px;
+  }
+
+  /* Footer
+     ---------------------------------------------------------------------- */
+
+  .footer {
+    padding-top: 2.5rem;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  /* Lightbox
+     ---------------------------------------------------------------------- */
+
+  .lightbox {
+    padding: 1rem;
+  }
+
+  .lightbox__close {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .lightbox__image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+  }
+
+  .promos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page__content .section-title--left {
+    text-align: center;
+  }

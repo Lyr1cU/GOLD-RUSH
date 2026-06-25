@@ -1,0 +1,218 @@
+/* ==========================================================================
+   site-template — scroll reveal (opacity + transform only)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease;
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal.reveal--from-left {
+    transform: translateX(-28px);
+  }
+
+  .reveal.reveal--from-left.is-visible {
+    transform: translateX(0);
+  }
+
+  .reveal.menu-tabs__btn {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease,
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .reveal.menu-tabs__btn.is-visible {
+    opacity: 1;
+  }
+
+  .reveal.menu-card {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease,
+      border-color 0.2s ease;
+  }
+
+  .reveal.menu-card.is-visible {
+    opacity: 1;
+  }
+
+  .reveal.promo-card {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease,
+      border-color 0.2s ease;
+  }
+
+  .reveal.promo-card.is-visible {
+    opacity: 1;
+  }
+
+  .reveal.feature-card {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease,
+      border-color 0.2s ease;
+  }
+
+  .reveal.feature-card.is-visible {
+    opacity: 1;
+  }
+
+  .reveal.gallery-item {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease,
+      border-color 0.2s ease;
+  }
+
+  .reveal.gallery-item.is-visible {
+    opacity: 1;
+  }
+
+  .reveal.location-chip {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease,
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .reveal.location-chip.is-visible {
+    opacity: 1;
+  }
+
+  .reveal.contact-list__item {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease;
+  }
+
+  .reveal.contact-list__item.is-visible {
+    opacity: 1;
+  }
+
+  .reveal.contact__form-wrap,
+  .reveal.contact-map,
+  #contact-socials.reveal {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease;
+  }
+
+  .reveal.contact__form-wrap.is-visible,
+  .reveal.contact-map.is-visible,
+  #contact-socials.reveal.is-visible {
+    opacity: 1;
+  }
+
+  /* Menu page: hidden until reveal runs (appear in, not wiggle on visible blocks) */
+  body[data-page="menu"] .menu-tabs__btn:not(.is-visible),
+  body[data-page="menu"] #menu-panel .menu-card:not(.is-hidden):not([hidden]):not(.is-visible) {
+    opacity: 0;
+    transform: translateX(-28px);
+    pointer-events: none;
+  }
+
+  body[data-page="menu"] .menu-tabs__btn.is-visible,
+  body[data-page="menu"] #menu-panel .menu-card.is-visible {
+    pointer-events: auto;
+  }
+
+  /* Promos page */
+  body[data-page="promos"] #promos-grid .promo-card:not(.is-visible) {
+    opacity: 0;
+    transform: translateX(-28px);
+    pointer-events: none;
+  }
+
+  body[data-page="promos"] #promos-grid .promo-card.is-visible {
+    pointer-events: auto;
+  }
+
+  /* About page */
+  body[data-page="about"] #about .section-title:not(.is-visible),
+  body[data-page="about"] #about .about__text:not(.is-visible),
+  body[data-page="about"] #gallery .section-title:not(.is-visible),
+  body[data-page="about"] #gallery .section-subtitle:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(22px);
+    pointer-events: none;
+  }
+
+  body[data-page="about"] #about .feature-card:not(.is-visible),
+  body[data-page="about"] #gallery .gallery-item:not(.is-visible) {
+    opacity: 0;
+    transform: translateX(-28px);
+    pointer-events: none;
+  }
+
+  body[data-page="about"] #about .section-title.is-visible,
+  body[data-page="about"] #about .about__text.is-visible,
+  body[data-page="about"] #about .feature-card.is-visible,
+  body[data-page="about"] #gallery .section-title.is-visible,
+  body[data-page="about"] #gallery .section-subtitle.is-visible,
+  body[data-page="about"] #gallery .gallery-item.is-visible {
+    pointer-events: auto;
+  }
+
+  /* Contacts page */
+  body[data-page="contacts"] #contact-title:not(.is-visible),
+  body[data-page="contacts"] .contact__form-wrap:not(.is-visible),
+  body[data-page="contacts"] #contact-map:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(22px);
+    pointer-events: none;
+  }
+
+  body[data-page="contacts"] .location-chip:not(.is-visible),
+  body[data-page="contacts"] #contact-list .contact-list__item:not(.is-visible),
+  body[data-page="contacts"] #contact-socials:not(.is-visible) {
+    opacity: 0;
+    transform: translateX(-28px);
+    pointer-events: none;
+  }
+
+  body[data-page="contacts"] #contact-title.is-visible,
+  body[data-page="contacts"] .location-chip.is-visible,
+  body[data-page="contacts"] #contact-list .contact-list__item.is-visible,
+  body[data-page="contacts"] #contact-socials.is-visible,
+  body[data-page="contacts"] .contact__form-wrap.is-visible,
+  body[data-page="contacts"] #contact-map.is-visible {
+    pointer-events: auto;
+  }
+
+  /* Home — gallery headings before reveal */
+  body[data-page="home"] #gallery .section-title:not(.is-visible),
+  body[data-page="home"] #gallery .section-subtitle:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(22px);
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

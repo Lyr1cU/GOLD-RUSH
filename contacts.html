@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти — GOLD RUSH</title>
+  <meta name="description" content="Контакти GOLD RUSH — три точки в Дніпрі, телефон, графік та карта.">
+  <link rel="icon" href="img/assets/logo.png" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body data-page="contacts">
+  <header class="header">
+    <div class="header__inner container">
+      <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-aria="navOpenMenu" aria-label="Відкрити меню">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <a class="logo" href="index.html" aria-label="GOLD RUSH — на головну">
+        <img class="logo__icon" src="img/assets/logo.png" width="64" height="64" alt="">
+        <span class="logo__text"><span class="logo__name" data-i18n="logoName">GOLD RUSH</span></span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-i18n="navHome">Головна</a></li>
+          <li><a class="nav__link" href="menu.html" data-i18n="navMenu">Меню</a></li>
+          <li><a class="nav__link" href="promos.html" data-i18n="navPromos">Акції</a></li>
+          <li><a class="nav__link" href="about.html" data-i18n="navAbout">Про нас</a></li>
+          <li><a class="nav__link is-active" href="contacts.html" data-i18n="navContact">Контакти</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-switch" role="group" aria-label="Мова сайту">
+          <button class="lang-switch__btn is-active" type="button" data-lang="uk" aria-pressed="true">UA</button>
+          <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-switch__btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
+        </div>
+        <a class="btn btn--primary header__cta" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title" data-i18n="pageContactsTitle">Контакти</h1>
+        <p class="page-hero__subtitle">Оберіть найближчу точку GOLD RUSH у Дніпрі</p>
+      </div>
+    </div>
+
+    <section class="contact section" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__grid">
+          <div class="contact__info">
+            <h2 class="section-title section-title--left" id="contact-title" data-i18n="contactSectionTitle">Наші точки</h2>
+
+            <div class="location-chips" id="location-chips" role="group" aria-label="Локації"></div>
+
+            <dl class="contact-list" id="contact-list"></dl>
+
+            <div class="socials" id="contact-socials"></div>
+          </div>
+
+          <div class="contact__form-wrap">
+            <h3 class="contact__form-title" data-i18n="formTitle">Замовити на самовивіз</h3>
+            <p class="contact-form__intro" data-i18n="formIntro">Залиште заявку — передзвонимо для підтвердження протягом 5–10 хвилин.</p>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="contact-form__row">
+                <label class="field">
+                  <span class="field__label" data-i18n="formName">Ім'я</span>
+                  <input class="field__input" type="text" name="name" required autocomplete="name" data-i18n-placeholder="formName">
+                  <span class="field__error" data-error="name"></span>
+                </label>
+                <label class="field">
+                  <span class="field__label" data-i18n="formPhone">Телефон</span>
+                  <input class="field__input" type="tel" name="phone" required autocomplete="tel" data-i18n-placeholder="formPhone">
+                  <span class="field__error" data-error="phone"></span>
+                </label>
+              </div>
+              <div class="contact-form__row">
+                <label class="field">
+                  <span class="field__label" data-i18n="formLocation">Точка самовивозу</span>
+                  <select class="field__input field__input--select" name="location" id="form-location" required></select>
+                  <span class="field__error" data-error="location"></span>
+                </label>
+                <label class="field">
+                  <span class="field__label" data-i18n="formPickup">Час самовивозу</span>
+                  <select class="field__input field__input--select" name="pickup" id="form-pickup" required>
+                    <option value="" disabled selected hidden data-i18n="formPickup">Час самовивозу</option>
+                    <option value="asap" data-i18n="formPickupAsap">Якомога швидше</option>
+                    <option value="30" data-i18n="formPickup30">Через ~30 хвилин</option>
+                    <option value="60" data-i18n="formPickup60">Через ~1 годину</option>
+                  </select>
+                  <span class="field__error" data-error="pickup"></span>
+                </label>
+              </div>
+              <label class="field">
+                <span class="field__label" data-i18n="formOrder">Ваше замовлення</span>
+                <textarea class="field__input field__input--area" name="order" rows="4" required data-i18n-placeholder="formOrderPlaceholder"></textarea>
+                <span class="field__error" data-error="order"></span>
+              </label>
+              <button class="btn btn--primary btn--full" type="submit" data-i18n="formSubmit">Замовити</button>
+            </form>
+
+            <p class="contact-form__success" id="form-success" hidden data-i18n="formSuccess">Дякуємо! Ми передзвонимо, щоб підтвердити замовлення.</p>
+          </div>
+        </div>
+
+        <div class="contact-map" id="contact-map"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo" data-i18n="logoName">GOLD RUSH</span>
+        <p class="footer__tagline" data-i18n="footerTagline">Швидко. Ситно. Поруч.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Футер навігація">
+        <a href="index.html" data-i18n="navHome">Головна</a>
+        <a href="menu.html" data-i18n="navMenu">Меню</a>
+        <a href="promos.html" data-i18n="navPromos">Акції</a>
+        <a href="about.html" data-i18n="navAbout">Про нас</a>
+        <a href="contacts.html" data-i18n="navContact">Контакти</a>
+      </nav>
+      <div class="footer__actions">
+        <div class="socials socials--footer" id="footer-socials"></div>
+        <a class="footer__top" href="index.html" data-i18n="footerTop">Нагору ↑</a>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p class="footer__copy" data-i18n="footerCopyright">© 2026 GOLD RUSH. Демо розширеного пакету.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

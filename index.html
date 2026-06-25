@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <script>
+    (function () {
+      var path = location.pathname;
+      var last = path.split("/").pop() || "";
+
+      if (path.length > 1 && !path.endsWith("/") && last.indexOf(".") === -1) {
+        location.replace(path + "/" + location.search + location.hash);
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GOLD RUSH — фастфуд у Дніпрі</title>
+  <meta name="description" content="GOLD RUSH — бургери, комбо та швидке обслуговування поруч із домом. Швидко. Ситно. Поруч.">
+  <link rel="icon" href="img/assets/logo.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body data-page="home">
+  <header class="header">
+    <div class="header__inner container">
+      <button
+        class="burger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-i18n-aria="navOpenMenu"
+        aria-label="Відкрити меню"
+      >
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <a class="logo" href="index.html#hero" aria-label="GOLD RUSH — на головну">
+        <img class="logo__icon" src="img/assets/logo.png" width="64" height="64" alt="">
+        <span class="logo__text">
+          <span class="logo__name" data-i18n="logoName">GOLD RUSH</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link is-active" href="index.html" data-i18n="navHome">Головна</a></li>
+          <li><a class="nav__link" href="menu.html" data-i18n="navMenu">Меню</a></li>
+          <li><a class="nav__link" href="promos.html" data-i18n="navPromos">Акції</a></li>
+          <li><a class="nav__link" href="about.html" data-i18n="navAbout">Про нас</a></li>
+          <li><a class="nav__link" href="contacts.html" data-i18n="navContact">Контакти</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-switch" role="group" aria-label="Мова сайту">
+          <button class="lang-switch__btn is-active" type="button" data-lang="uk" aria-pressed="true">UA</button>
+          <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-switch__btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
+        </div>
+        <a class="btn btn--primary header__cta" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+      </div>
+    </div>
+
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__media" aria-hidden="true">
+        <img
+          class="hero__image"
+          src="img/assets/hero.jpg"
+          width="2400"
+          height="1350"
+          alt="Бургери та фастфуд GOLD RUSH"
+          fetchpriority="high"
+        >
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content container">
+        <h1 class="hero__title" data-i18n="heroTitle">Швидко. Ситно. Поруч.</h1>
+        <p class="hero__subtitle" data-i18n="heroSubtitle">
+          Бургери, комбо та улюблені страви — готуємо за хвилини у трьох точках Дніпра
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+          <a class="btn btn--outline btn--lg" href="menu.html" data-i18n="ctaMenu">Меню</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="promos section section--white" id="promos">
+      <div class="container promos__inner">
+        <h2 class="section-title" id="promos-title"></h2>
+        <p class="section-subtitle" id="promos-subtitle"></p>
+
+        <div class="promos-grid" id="promos-grid"></div>
+
+        <div class="section-more">
+          <a class="btn btn--primary" href="promos.html" data-i18n="promosAll">Усі акції →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu section" id="menu">
+      <div class="container menu__inner">
+        <h2 class="section-title section-title--left" id="menu-title"></h2>
+        <p class="section-subtitle section-subtitle--left" id="menu-subtitle"></p>
+
+        <div class="menu-tabs" id="menu-tabs" role="tablist" aria-label="Категорії меню"></div>
+
+        <div class="menu-grid" id="menu-panel" role="tabpanel"></div>
+
+        <div class="section-more">
+          <a class="btn btn--primary" href="menu.html" data-i18n="menuAll">Повне меню →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section section--white" id="about">
+      <div class="container about__inner">
+        <p class="section-label" data-i18n="aboutLabel">Про нас</p>
+        <h2 class="section-title" data-i18n="aboutTitle">GOLD RUSH — фастфуд нового рівня</h2>
+        <p class="about__text" data-i18n="aboutText">
+          Ми — мережа фастфуду в Дніпрі з чорно-золотим стилем і чесними порціями. Готуємо швидко, подаємо ситно — щоб ви могли насолодитися смаком без зайвого очікування.
+        </p>
+
+        <ul class="features">
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 14v10l7 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title" data-i18n="featureSpeedTitle">За 5 хвилин</h3>
+            <p class="feature-card__text" data-i18n="featureSpeedText">Готуємо замовлення швидко — без довгого очікування в черзі.</p>
+          </li>
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 28h24l-2 8H14l-2-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M18 28V18a6 6 0 0 1 12 0v10" stroke="currentColor" stroke-width="2"/>
+                <path d="M20 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title" data-i18n="featureFreshTitle">Свіжі продукти</h3>
+            <p class="feature-card__text" data-i18n="featureFreshText">Щодня свіжі булочки, м'ясо та овочі — смак відчувається в кожному укусі.</p>
+          </li>
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 34V18l14-8 14 8v16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M18 34V24h12v10" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 34h28" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title" data-i18n="featureAtmoTitle">Сучасні зали</h3>
+            <p class="feature-card__text" data-i18n="featureAtmoText">Затишні зали з чорно-золотим інтер'єром — зручно їсти на місці або брати з собою.</p>
+          </li>
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="14" width="28" height="22" rx="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 22h16M16 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M30 10l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title" data-i18n="featureCombosTitle">Вигідні комбо</h3>
+            <p class="feature-card__text" data-i18n="featureCombosText">Набори бургер + картопля + напій за спеціальною ціною щодня.</p>
+          </li>
+        </ul>
+
+        <div class="section-more">
+          <a class="btn btn--primary" href="about.html" data-i18n="aboutAll">Детальніше про нас →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery section" id="gallery" data-gallery-section>
+      <div class="container gallery__inner">
+        <h2 class="section-title" data-gallery-title></h2>
+        <p class="section-subtitle" data-gallery-subtitle></p>
+
+        <div class="gallery-grid" data-gallery-grid></div>
+      </div>
+    </section>
+
+    <section class="reviews section section--white" id="reviews">
+      <div class="container reviews__inner">
+        <h2 class="section-title" id="reviews-title"></h2>
+        <p class="section-subtitle" id="reviews-subtitle"></p>
+
+        <div class="reviews-slider">
+          <button class="reviews-slider__arrow reviews-slider__arrow--prev" type="button" aria-label="Попередній відгук" data-i18n-aria="reviewsPrev">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+
+          <div class="reviews-slider__track" id="reviews-track"></div>
+
+          <button class="reviews-slider__arrow reviews-slider__arrow--next" type="button" aria-label="Наступний відгук" data-i18n-aria="reviewsNext">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+
+        <div class="reviews-dots" id="reviews-dots" role="tablist" aria-label="Відгуки"></div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__grid">
+          <div class="contact__info">
+            <h2 class="section-title section-title--left" id="contact-title"></h2>
+
+            <div class="location-chips" id="location-chips" role="group" aria-label="Локації"></div>
+
+            <dl class="contact-list" id="contact-list"></dl>
+
+            <div class="socials" id="contact-socials"></div>
+          </div>
+
+          <div class="contact__form-wrap">
+            <h3 class="contact__form-title" data-i18n="formTitle">Замовити на самовивіз</h3>
+            <p class="contact-form__intro" data-i18n="formIntro">Залиште заявку — передзвонимо для підтвердження протягом 5–10 хвилин.</p>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="contact-form__row">
+                <label class="field">
+                  <span class="field__label" data-i18n="formName">Ім'я</span>
+                  <input class="field__input" type="text" name="name" required autocomplete="name" data-i18n-placeholder="formName">
+                  <span class="field__error" data-error="name"></span>
+                </label>
+                <label class="field">
+                  <span class="field__label" data-i18n="formPhone">Телефон</span>
+                  <input class="field__input" type="tel" name="phone" required autocomplete="tel" data-i18n-placeholder="formPhone">
+                  <span class="field__error" data-error="phone"></span>
+                </label>
+              </div>
+              <div class="contact-form__row">
+                <label class="field">
+                  <span class="field__label" data-i18n="formLocation">Точка самовивозу</span>
+                  <select class="field__input field__input--select" name="location" id="form-location" required></select>
+                  <span class="field__error" data-error="location"></span>
+                </label>
+                <label class="field">
+                  <span class="field__label" data-i18n="formPickup">Час самовивозу</span>
+                  <select class="field__input field__input--select" name="pickup" id="form-pickup" required>
+                    <option value="" disabled selected hidden data-i18n="formPickup">Час самовивозу</option>
+                    <option value="asap" data-i18n="formPickupAsap">Якомога швидше</option>
+                    <option value="30" data-i18n="formPickup30">Через ~30 хвилин</option>
+                    <option value="60" data-i18n="formPickup60">Через ~1 годину</option>
+                  </select>
+                  <span class="field__error" data-error="pickup"></span>
+                </label>
+              </div>
+              <label class="field">
+                <span class="field__label" data-i18n="formOrder">Ваше замовлення</span>
+                <textarea class="field__input field__input--area" name="order" rows="4" required data-i18n-placeholder="formOrderPlaceholder"></textarea>
+                <span class="field__error" data-error="order"></span>
+              </label>
+              <button class="btn btn--primary btn--full" type="submit" data-i18n="formSubmit">Замовити</button>
+            </form>
+
+            <p class="contact-form__success" id="form-success" hidden data-i18n="formSuccess">Дякуємо! Ми передзвонимо, щоб підтвердити замовлення.</p>
+          </div>
+        </div>
+
+        <div class="contact-map" id="contact-map"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo" data-i18n="logoName">GOLD RUSH</span>
+        <p class="footer__tagline" data-i18n="footerTagline">Швидко. Ситно. Поруч.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Футер навігація">
+        <a href="index.html" data-i18n="navHome">Головна</a>
+        <a href="menu.html" data-i18n="navMenu">Меню</a>
+        <a href="promos.html" data-i18n="navPromos">Акції</a>
+        <a href="about.html" data-i18n="navAbout">Про нас</a>
+        <a href="contacts.html" data-i18n="navContact">Контакти</a>
+      </nav>
+
+      <div class="footer__actions">
+        <div class="socials socials--footer" id="footer-socials"></div>
+        <a class="footer__top" href="#hero" data-i18n="footerTop">Нагору ↑</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom container">
+      <p class="footer__copy" data-i18n="footerCopyright">© 2026 GOLD RUSH. Демо розширеного пакету.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" type="button" aria-label="Закрити">&times;</button>
+    <img class="lightbox__image" src="" alt="">
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

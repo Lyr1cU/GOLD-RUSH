@@ -1,0 +1,85 @@
+{
+  "title_uk": "Контакти",
+  "title_en": "Contact",
+  "title_ru": "Контакты",
+  "addressLabel_uk": "Адреса",
+  "addressLabel_en": "Address",
+  "addressLabel_ru": "Адрес",
+  "hoursLabel_uk": "Графік",
+  "hoursLabel_en": "Hours",
+  "hoursLabel_ru": "График",
+  "phoneLabel_uk": "Телефон",
+  "phoneLabel_en": "Phone",
+  "phoneLabel_ru": "Телефон",
+  "phone": "+380670000001",
+  "phoneDisplay_uk": "+380 67 000 00 01",
+  "phoneDisplay_en": "+380 67 000 00 01",
+  "phoneDisplay_ru": "+380 67 000 00 01",
+  "mapLabel_uk": "Карта",
+  "mapLabel_en": "Map",
+  "mapLabel_ru": "Карта",
+  "locations": [
+    {
+      "id": "center",
+      "name_uk": "Центр",
+      "name_en": "Downtown",
+      "name_ru": "Центр",
+      "address_uk": "пр. Дмитра Яворницького, 1, Дніпро",
+      "address_en": "1 Dmytra Yavornytskoho Ave, Dnipro",
+      "address_ru": "пр. Дмитра Яворницького, 1, Днепр",
+      "hours_uk": "10:00–23:00 щодня",
+      "hours_en": "10:00–23:00 daily",
+      "hours_ru": "10:00–23:00 ежедневно",
+      "mapLat": 48.4647,
+      "mapLng": 35.0462,
+      "mapZoom": 16
+    },
+    {
+      "id": "naberezhna",
+      "name_uk": "Набережна",
+      "name_en": "Riverfront",
+      "name_ru": "Набережная",
+      "address_uk": "вул. Січеславська Набережна, 15, Дніпро",
+      "address_en": "15 Sicheslavska Naberezhna St, Dnipro",
+      "address_ru": "ул. Сичеславская Набережная, 15, Днепр",
+      "hours_uk": "10:00–22:00 щодня",
+      "hours_en": "10:00–22:00 daily",
+      "hours_ru": "10:00–22:00 ежедневно",
+      "mapLat": 48.455,
+      "mapLng": 35.075,
+      "mapZoom": 16
+    },
+    {
+      "id": "karavan",
+      "name_uk": "Караван",
+      "name_en": "Karavan",
+      "name_ru": "Караван",
+      "address_uk": "вул. Нижньодніпровська, 17, Дніпро",
+      "address_en": "17 Nizhnodniprovska St, Dnipro",
+      "address_ru": "ул. Нижнеднепровская, 17, Днепр",
+      "hours_uk": "10:00–22:00 щодня",
+      "hours_en": "10:00–22:00 daily",
+      "hours_ru": "10:00–22:00 ежедневно",
+      "mapLat": 48.5295,
+      "mapLng": 35.0308,
+      "mapZoom": 16
+    }
+  ],
+  "socials": [
+    {
+      "id": "telegram",
+      "url": "https://t.me/",
+      "label": "Telegram"
+    },
+    {
+      "id": "instagram",
+      "url": "https://instagram.com/",
+      "label": "Instagram"
+    },
+    {
+      "id": "facebook",
+      "url": "https://facebook.com/",
+      "label": "Facebook"
+    }
+  ]
+}

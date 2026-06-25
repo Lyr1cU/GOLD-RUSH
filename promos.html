@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Акції та комбо — GOLD RUSH</title>
+  <meta name="description" content="Акції та комбо GOLD RUSH — вигідні набори та спеціальні пропозиції.">
+  <link rel="icon" href="img/assets/logo.png" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body data-page="promos">
+  <header class="header">
+    <div class="header__inner container">
+      <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-aria="navOpenMenu" aria-label="Відкрити меню">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <a class="logo" href="index.html" aria-label="GOLD RUSH — на головну">
+        <img class="logo__icon" src="img/assets/logo.png" width="64" height="64" alt="">
+        <span class="logo__text"><span class="logo__name" data-i18n="logoName">GOLD RUSH</span></span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-i18n="navHome">Головна</a></li>
+          <li><a class="nav__link" href="menu.html" data-i18n="navMenu">Меню</a></li>
+          <li><a class="nav__link is-active" href="promos.html" data-i18n="navPromos">Акції</a></li>
+          <li><a class="nav__link" href="about.html" data-i18n="navAbout">Про нас</a></li>
+          <li><a class="nav__link" href="contacts.html" data-i18n="navContact">Контакти</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-switch" role="group" aria-label="Мова сайту">
+          <button class="lang-switch__btn is-active" type="button" data-lang="uk" aria-pressed="true">UA</button>
+          <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-switch__btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
+        </div>
+        <a class="btn btn--primary header__cta" href="contacts.html" data-i18n="ctaOrder">Замовити</a>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title" data-i18n="pagePromosTitle">Акції та комбо</h1>
+        <p class="page-hero__subtitle" id="promos-subtitle"><!-- build:promos-subtitle -->
+Вигідні набори та спеціальні пропозиції — оновлюємо щотижня
+<!-- /build:promos-subtitle --></p>
+      </div>
+    </div>
+
+    <section class="promos section section--white promos-page" aria-labelledby="promos-page-heading">
+      <div class="container promos__inner">
+        <h2 class="visually-hidden" id="promos-page-heading">Каталог акцій</h2>
+        <h2 class="visually-hidden" id="promos-title"></h2>
+        <div class="promos-grid" id="promos-grid" data-prebuilt="true">
+<!-- build:promos-grid -->
+<article class="promo-card" data-build-index="0">
+  <div class="promo-card__media">
+    <img src="img/menu/combos/ComboClassic.png" alt="Комбо Класик" width="400" height="260" loading="lazy" decoding="async">
+  </div>
+  <div class="promo-card__body">
+    <div class="promo-card__head">
+      <h3 class="promo-card__name">Комбо Класик</h3>
+      <span class="promo-card__price">149 ₴</span>
+    </div>
+    <p class="promo-card__desc">Бургер Класик + картопля середня + напій 0.5 л</p>
+    <p class="promo-card__terms">Діє щодня</p>
+  </div>
+</article>
+<article class="promo-card" data-build-index="1">
+  <div class="promo-card__media">
+    <img src="img/menu/combos/DoubleBlow.png" alt="Подвійний удар" width="400" height="260" loading="lazy" decoding="async">
+  </div>
+  <div class="promo-card__body">
+    <div class="promo-card__head">
+      <h3 class="promo-card__name">Подвійний удар</h3>
+      <span class="promo-card__price">179 ₴</span>
+    </div>
+    <p class="promo-card__desc">Подвійний чіз + картопля велика + кола 0.5 л</p>
+    <p class="promo-card__terms">Діє щодня</p>
+  </div>
+</article>
+<article class="promo-card" data-build-index="2">
+  <div class="promo-card__media">
+    <img src="img/menu/combos/FamilySet.png" alt="Сімейний сет" width="400" height="260" loading="lazy" decoding="async">
+  </div>
+  <div class="promo-card__body">
+    <div class="promo-card__head">
+      <h3 class="promo-card__name">Сімейний сет</h3>
+      <span class="promo-card__price">399 ₴</span>
+    </div>
+    <p class="promo-card__desc">4 бургери + 2 великі картоплі + 4 напої</p>
+    <p class="promo-card__terms">Пт–Нд</p>
+  </div>
+</article>
+<article class="promo-card" data-build-index="3">
+  <div class="promo-card__media">
+    <img src="img/menu/combos/2-for-price-of-1.png" alt="2 за ціною 1" width="400" height="260" loading="lazy" decoding="async">
+  </div>
+  <div class="promo-card__body">
+    <div class="promo-card__head">
+      <h3 class="promo-card__name">2 за ціною 1</h3>
+      <span class="promo-card__price">акція</span>
+    </div>
+    <p class="promo-card__desc">Другий бургер Класик безкоштовно у вівторок</p>
+    <p class="promo-card__terms">Кожен вівторок до 18:00</p>
+  </div>
+</article>
+<article class="promo-card" data-build-index="4">
+  <div class="promo-card__media">
+    <img src="img/menu/combos/LunchRush.png" alt="Обідній раш" width="400" height="260" loading="lazy" decoding="async">
+  </div>
+  <div class="promo-card__body">
+    <div class="promo-card__head">
+      <h3 class="promo-card__name">Обідній раш</h3>
+      <span class="promo-card__price">119 ₴</span>
+    </div>
+    <p class="promo-card__desc">Бургер + напій за спеціальною ціною</p>
+    <p class="promo-card__terms">Пн–Пт 12:00–15:00</p>
+  </div>
+</article>
+<article class="promo-card" data-build-index="5">
+  <div class="promo-card__media">
+    <img src="img/menu/combos/Children'sCombo.png" alt="Дитяче комбо" width="400" height="260" loading="lazy" decoding="async">
+  </div>
+  <div class="promo-card__body">
+    <div class="promo-card__head">
+      <h3 class="promo-card__name">Дитяче комбо</h3>
+      <span class="promo-card__price">99 ₴</span>
+    </div>
+    <p class="promo-card__desc">Міні-бургер + картопля + сік 0.2 л + іграшка</p>
+    <p class="promo-card__terms">Діє щодня</p>
+  </div>
+</article>
+<article class="promo-card" data-build-index="6">
+  <div class="promo-card__media">
+    <img src="img/menu/combos/SharpBoxing.png" alt="Гострий бокс" width="400" height="260" loading="lazy" decoding="async">
+  </div>
+  <div class="promo-card__body">
+    <div class="promo-card__head">
+      <h3 class="promo-card__name">Гострий бокс</h3>
+      <span class="promo-card__price">169 ₴</span>
+    </div>
+    <p class="promo-card__desc">Кріспі чікен + картопля + соус + напій</p>
+    <p class="promo-card__terms">Діє до кінця місяця</p>
+  </div>
+</article>
+<article class="promo-card" data-build-index="7">
+  <div class="promo-card__media">
+    <img src="img/menu/combos/WeekendBreakfast.png" alt="Сніданок вихідного" width="400" height="260" loading="lazy" decoding="async">
+  </div>
+  <div class="promo-card__body">
+    <div class="promo-card__head">
+      <h3 class="promo-card__name">Сніданок вихідного</h3>
+      <span class="promo-card__price">79 ₴</span>
+    </div>
+    <p class="promo-card__desc">Яєчний маффін + кава або чай</p>
+    <p class="promo-card__terms">Сб–Нд 8:00–11:00</p>
+  </div>
+</article>
+<!-- /build:promos-grid -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo" data-i18n="logoName">GOLD RUSH</span>
+        <p class="footer__tagline" data-i18n="footerTagline">Швидко. Ситно. Поруч.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Футер навігація">
+        <a href="index.html" data-i18n="navHome">Головна</a>
+        <a href="menu.html" data-i18n="navMenu">Меню</a>
+        <a href="promos.html" data-i18n="navPromos">Акції</a>
+        <a href="about.html" data-i18n="navAbout">Про нас</a>
+        <a href="contacts.html" data-i18n="navContact">Контакти</a>
+      </nav>
+      <div class="footer__actions">
+        <div class="socials socials--footer" id="footer-socials"></div>
+        <a class="footer__top" href="index.html" data-i18n="footerTop">Нагору ↑</a>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p class="footer__copy" data-i18n="footerCopyright">© 2026 GOLD RUSH. Демо розширеного пакету.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

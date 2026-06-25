@@ -1,0 +1,84 @@
+# =============================================================================
+# OPTIONAL: Deploy to a client VPS (real hosting + custom domain)
+# =============================================================================
+#
+# This workflow is for evaluation / future client handoff. It does NOT replace
+# pages.yml and does NOT run automatically — only manual trigger.
+#
+# Typical client flow once this is configured:
+#   1. Client opens https://client-domain.com/admin/
+#   2. Login with GitHub → edit content → Publish
+#   3. Decap commits to this repo (content/*.json, img/uploads/*)
+#   4. You trigger this workflow (or switch trigger to push — see below)
+#   5. Files sync to VPS → site shows new data in ~1–2 min
+#
+# Required GitHub repo secrets (Settings → Secrets → Actions):
+#   VPS_HOST      — server IP or hostname, e.g. 203.0.113.10
+#   VPS_USER      — SSH user, e.g. deploy or root
+#   VPS_SSH_KEY   — private key (PEM), public key in ~/.ssh/authorized_keys on VPS
+#   VPS_PATH      — web root on server, e.g. /var/www/client-site
+#
+# One-time VPS setup (outline):
+#   - nginx serves VPS_PATH as static site
+#   - certbot for SSL on client domain
+#   - DNS A record → VPS IP
+#   - admin/config.yml: site_url + repo point to client project
+#
+# To use for production instead of GitHub Pages:
+#   - Keep pages.yml for your demo repo
+#   - On client repo: disable/remove pages.yml, change "on" below to push main
+#
+# =============================================================================
+
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: vps-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production-vps
+      url: https://YOUR-CLIENT-DOMAIN.example.com
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build catalog pages
+        run: node scripts/build-pages.mjs
+
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
+
+      - name: Add VPS to known hosts
+        run: ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Rsync site files to VPS
+        run: |
+          rsync -avz --delete \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'docs/' \
+            --exclude 'maket/' \
+            ./ "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}/"
+
+      - name: Done
+        run: echo "Deployed to ${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}"
+
+# Every push to main (including Decap Publish) auto-deploys to VPS.
+# For demo-only repos, use workflow_dispatch only and keep pages.yml.
