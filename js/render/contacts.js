@@ -5,6 +5,11 @@ import { pickLocalized } from "../utils.js";
 let contactsData = null;
 let activeLocationId = null;
 let currentLang = "uk";
+let renderGeneration = 0;
+
+export function setContactsLang(lang) {
+  currentLang = lang;
+}
 
 const ADDRESS_ICON = `<svg class="contact-list__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
 
@@ -190,15 +195,15 @@ function renderMap(location, data, lang) {
   iframe.src = `https://www.google.com/maps?q=${lat},${lng}&hl=${hl}&z=${zoom}&output=embed`;
 }
 
-function selectLocation(locationId, lang) {
+function selectLocation(locationId) {
   if (!contactsData) {
     return;
   }
 
   activeLocationId = locationId;
-  renderLocationChips(contactsData, lang);
-  renderContactList(contactsData, lang);
-  renderMap(getActiveLocation(contactsData), contactsData, lang);
+  renderLocationChips(contactsData, currentLang);
+  renderContactList(contactsData, currentLang);
+  renderMap(getActiveLocation(contactsData), contactsData, currentLang);
   syncOrderFormLocation(locationId);
 }
 
@@ -237,14 +242,14 @@ function initOrderForm() {
 
   select.addEventListener("change", () => {
     if (select.value) {
-      selectLocation(select.value, currentLang);
+      selectLocation(select.value);
     }
   });
 
   select.dataset.ready = "true";
 }
 
-function initLocationChips(lang) {
+function initLocationChips() {
   const chips = document.getElementById("location-chips");
 
   if (!chips || chips.dataset.ready === "true") {
@@ -255,7 +260,7 @@ function initLocationChips(lang) {
     const button = event.target.closest(".location-chip");
 
     if (button?.dataset.locationId) {
-      selectLocation(button.dataset.locationId, lang);
+      selectLocation(button.dataset.locationId);
     }
   });
 
@@ -318,8 +323,15 @@ export function initContactsPageAnimations() {
 
 export async function renderContacts(lang, options = {}) {
   const { reveal = true } = options;
+  const generation = ++renderGeneration;
   currentLang = lang;
-  contactsData = await loadContacts();
+  const data = await loadContacts();
+
+  if (generation !== renderGeneration) {
+    return;
+  }
+
+  contactsData = data;
   const locations = getLocations(contactsData);
   const title = document.getElementById("contact-title");
 
@@ -331,7 +343,7 @@ export async function renderContacts(lang, options = {}) {
     if (!title.hasAttribute("data-i18n")) {
       title.textContent = pickLocalized(contactsData, lang, "title");
     }
-    initLocationChips(lang);
+    initLocationChips();
     initOrderForm();
     renderLocationChips(contactsData, lang);
     renderContactList(contactsData, lang);

@@ -71,6 +71,22 @@
     display: none;
   }
 
+  .header {
+    z-index: 120;
+  }
+
+  .header__inner {
+    position: relative;
+    z-index: 115;
+  }
+
+  .burger,
+  .logo,
+  .header__actions {
+    position: relative;
+    z-index: 111;
+  }
+
   .nav {
     position: fixed;
     top: var(--header-height);
@@ -167,7 +183,7 @@
   }
 
   body.is-nav-open {
-    overflow: hidden;
+    touch-action: none;
   }
 
   /* Hero

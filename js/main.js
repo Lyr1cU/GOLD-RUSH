@@ -3,7 +3,11 @@ import { initReveal } from "./reveal.js";
 import { initAboutPageAnimations } from "./render/about.js";
 import { initGalleryLightbox, renderGallery } from "./render/gallery.js";
 import { initMenuPageAnimations, initMenuTabs, renderMenu } from "./render/menu.js";
-import { initContactsPageAnimations, renderContacts } from "./render/contacts.js";
+import {
+  initContactsPageAnimations,
+  renderContacts,
+  setContactsLang,
+} from "./render/contacts.js";
 import { initPromosPageAnimations, renderPromos } from "./render/promos.js";
 import { initReviewsSlider, renderReviews } from "./render/reviews.js";
 
@@ -18,6 +22,7 @@ const siteNav = document.getElementById("site-nav");
 const navOverlay = document.getElementById("nav-overlay");
 const navPanelLinks = document.querySelectorAll(".nav__link, .nav__cta");
 
+let navScrollLockY = 0;
 let currentLang = DEFAULT_LANG;
 
 function getNavAriaLabel(isOpen) {
@@ -30,6 +35,7 @@ function setLanguage(lang) {
   if (!strings) return;
 
   currentLang = lang;
+  setContactsLang(lang);
   document.documentElement.lang = lang;
 
   if (strings.metaTitle && page === "home") {
@@ -153,6 +159,23 @@ function setNavOpen(isOpen) {
   if (navOverlay) {
     navOverlay.hidden = !isOpen;
   }
+
+  if (isOpen) {
+    navScrollLockY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${navScrollLockY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+    return;
+  }
+
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+  window.scrollTo({ top: navScrollLockY, behavior: "instant" });
 }
 
 burger?.addEventListener("click", () => {

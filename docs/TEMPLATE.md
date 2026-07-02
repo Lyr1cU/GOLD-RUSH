@@ -24,6 +24,7 @@ Use this when starting a **new client site** from `site-template`.
 - `admin/config.yml` collection field names (must match JSON keys)
 - `content/*.json` structure (`_uk` / `_en` suffixes)
 - Mobile/tablet CSS split (`tablet.css`, `mobile.css`)
+- **Burger menu + scroll:** do not put `backdrop-filter` on `.header` if `.nav` is inside it; keep header chrome above drawer (`z-index`) and use JS scroll lock — see [`docs/MOBILE_NAV_FIXED_POSITIONING.md`](MOBILE_NAV_FIXED_POSITIONING.md)
 
 ## 3. Per-client deploy setup
 
