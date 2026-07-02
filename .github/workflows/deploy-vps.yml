@@ -2,8 +2,8 @@
 # OPTIONAL: Deploy to a client VPS (real hosting + custom domain)
 # =============================================================================
 #
-# This workflow is for evaluation / future client handoff. It does NOT replace
-# pages.yml and does NOT run automatically — only manual trigger.
+# DISABLED for demo — runs only manually (Actions → Deploy to VPS → Run workflow).
+# For a real client repo, add push to main under "on:" (see comment at bottom).
 #
 # Typical client flow once this is configured:
 #   1. Client opens https://client-domain.com/admin/
@@ -33,8 +33,6 @@
 name: Deploy to VPS
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -80,5 +78,8 @@ jobs:
       - name: Done
         run: echo "Deployed to ${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}"
 
-# Every push to main (including Decap Publish) auto-deploys to VPS.
-# For demo-only repos, use workflow_dispatch only and keep pages.yml.
+# To auto-deploy on every push to main (client production):
+# on:
+#   push:
+#     branches: [main]
+#   workflow_dispatch:
